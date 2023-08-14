@@ -18,19 +18,16 @@ function juntandoListas(lista1, lista2) {
             posLista2++;
             posListaFinal++;
         }
-        if ((lista1.length + lista2.length) == listaFinal.length) {
-            break;
+    }
+    while((lista1.length + lista2.length) != listaFinal.length){
+        if(lista1.length > posLista1){
+            listaFinal.push(lista1[posLista1]);
+            posLista1++
         }
-    }
-    for (let i = posLista1; i < lista1.length; i++) {
-        posLista1++;
-        posListaFinal++;
-        listaFinal[posListaFinal] = lista1[posLista1];
-    }
-    for (let i = posLista1; i < lista1.length; i++) {
-        posLista2++;
-        posListaFinal++;
-        listaFinal[posListaFinal] = lista1[posLista1];
+        if(lista2.length > posLista2){
+            listaFinal.push(lista2[posLista2])
+            posLista2++;
+        }
     }
     console.log(listaFinal);
 }
